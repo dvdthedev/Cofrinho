@@ -1,6 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
 
-    IO.println("Hello world");
+    Moeda real = new Real();
+    real.setValor(100.00);
+
+    Cofrinho cofrinho = new Cofrinho();
+    cofrinho.adicionarMoeda(real);
+
+    Moeda euro = new Euro(150.00);
+    cofrinho.adicionarMoeda(euro);
+
+    cofrinho.listagemMoeda();
     }
