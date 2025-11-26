@@ -9,12 +9,11 @@ public class Dolar extends Moeda{
 
     @Override
     public void info() {
-        IO.println("Tipo: Dolar");
-        System.out.printf("Valor: %.2f \n", this.getValor());
+        System.out.printf("[Tipo: Dolar, Valor: %.2f] \n", this.getValor());
     }
 
     @Override
-    public void converter() {
-
+    public double converter() {
+        return this.getValor() * 5.0;
     }
 }

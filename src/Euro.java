@@ -9,12 +9,11 @@ public class Euro extends Moeda{
 
     @Override
     public void info() {
-        IO.println("Tipo: Euro");
-        System.out.printf("Valor: %.2f \n", this.getValor());
+        System.out.printf("[Tipo: Euro, Valor: %.2f] \n", this.getValor());
     }
 
     @Override
-    public void converter() {
-
+    public double converter() {
+        return this.getValor() * 6.0;
     }
 }

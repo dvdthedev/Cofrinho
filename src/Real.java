@@ -9,12 +9,11 @@ public class Real extends Moeda{
 
     @Override
     public void info() {
-        IO.println("Tipo: Real");
-        System.out.printf("Valor: %.2f \n", this.getValor());
+        System.out.printf("[Tipo: Real, Valor: %.2f] \n", this.getValor());
     }
 
     @Override
-    public void converter() {
-
+    public double converter() {
+        return this.getValor();
     }
 }

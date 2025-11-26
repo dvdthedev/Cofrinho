@@ -1,13 +1,64 @@
 void main() {
 
-    Moeda real = new Real();
-    real.setValor(100.00);
-
+    Scanner sc = new Scanner(System.in);
+    sc.useLocale(Locale.US);
     Cofrinho cofrinho = new Cofrinho();
-    cofrinho.adicionarMoeda(real);
+    int opcao = 1;
 
-    Moeda euro = new Euro(150.00);
-    cofrinho.adicionarMoeda(euro);
+    IO.println("------------------------------------------------");
+    IO.println("Bem vindo ao Cofrinho");
+    IO.println("------------------------------------------------");
+    while (opcao != 0){
+        IO.println("Selecione a opção desejada: ");
+        IO.println("1 - Adicionar moedas \n2 - Remover moedas\n3 - Listar moedas no cofrinho \n4 - Listar valores convertidos para Real \n0 - Sair");
+        opcao = sc.nextInt();
+        if(opcao == 0){
+            break;
+        }
+        if(opcao == 1){
+            IO.println("Selecione uma opção: \n1 - Real \n2 - Dolar \n3 - Euro\n0 - Sair");
+            int opcaoEspecie = sc.nextInt();
+            while (opcaoEspecie != 0){
+                if(opcaoEspecie > 3 || opcaoEspecie < 0){
+                    IO.println("Valor inválido, digite novamente.");
+                    opcaoEspecie = sc.nextInt();
+                }
+                if(opcaoEspecie == 1){
+                    IO.println("Digite um valor de depósito maior que 0");
+                    double valor = sc.nextDouble();
+                    while (0 >= valor){
+                        IO.println("Valor inválido, digite um valor de depósito maior que 0");
+                        valor = sc.nextDouble();
+                    }
+                    cofrinho.adicionarMoeda(new Real(valor));
+                    break;
+                }
+                if(opcaoEspecie == 2){
+                    IO.println("Digite um valor de depósito maior que 0");
+                    double valor = sc.nextDouble();
+                    while (0 >= valor){
+                        IO.println("Valor inválido, digite um valor de depósito maior que 0");
+                        valor = sc.nextDouble();
+                    }
+                    cofrinho.adicionarMoeda(new Dolar(valor));
+                    break;
+                }
+                if(opcaoEspecie == 3){
+                    IO.println("Digite um valor de depósito maior que 0");
+                    double valor = sc.nextDouble();
+                    while (0 >= valor){
+                        IO.println("Valor inválido, digite um valor de depósito maior que 0");
+                        valor = sc.nextDouble();
+                    }
+                    cofrinho.adicionarMoeda(new Euro(valor));
+                    break;
+                }
 
-    cofrinho.listagemMoeda();
+            }
+
+        }
+        if (opcao == 2){
+            cofrinho.listagemMoeda();
+        }
+     }
     }

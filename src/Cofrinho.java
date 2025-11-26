@@ -17,6 +17,9 @@ public class Cofrinho {
     }
     public void totalConvertido(){
 
+    Double total = moedas.stream().
+            mapToDouble(Moeda::converter).sum();
+        System.out.printf("Total convertido: R$%.2f", total);
     }
 
 
