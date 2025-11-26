@@ -58,7 +58,22 @@ void main() {
 
         }
         if (opcao == 2){
+            IO.println("Digite o número da moeda que deseja retirar do cofre: ");
+            IO.println("0 - Abortar operação");
             cofrinho.listagemMoeda();
+            int opcaoRemocao = sc.nextInt();
+            if(opcaoRemocao == 0){
+                IO.println("retornando...");
+            } //se o valor de opção for menor que 0 automáticamente será um valor falso!
+            else if(opcaoRemocao > cofrinho.moedasTamanho()){
+                IO.println("Valor inválido... retornando...");
+            } else {
+                Moeda moedaEscolhida = cofrinho.getMoeda(opcaoRemocao);
+                System.out.print("Moeda escolhida: ");
+                moedaEscolhida.info();
+                cofrinho.removerMoeda(moedaEscolhida);
+                System.out.println("Moeda removida com êxito.");
+            }
         }
      }
     }

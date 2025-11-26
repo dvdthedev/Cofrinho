@@ -10,9 +10,14 @@ public class Cofrinho {
     public void removerMoeda(Moeda moeda){
         moedas.remove(moeda);
     }
+
+    Moeda getMoeda(int num){
+        return moedas.get(num -1);
+    }
     public void listagemMoeda(){
-        for(Moeda moeda : moedas){
-            moeda.info();
+        for(int i = 0; i < moedas.size(); i++){
+            System.out.print(i+1 + " - ");
+            moedas.get(i).info();
         }
     }
     public void totalConvertido(){
@@ -20,6 +25,10 @@ public class Cofrinho {
     Double total = moedas.stream().
             mapToDouble(Moeda::converter).sum();
         System.out.printf("Total convertido: R$%.2f", total);
+    }
+
+    public int moedasTamanho(){
+        return moedas.size();
     }
 
 
