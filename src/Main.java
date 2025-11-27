@@ -53,7 +53,6 @@ void main() {
                     cofrinho.adicionarMoeda(new Euro(valor));
                     break;
                 }
-
             }
 
         }
@@ -74,6 +73,12 @@ void main() {
                 cofrinho.removerMoeda(moedaEscolhida);
                 System.out.println("Moeda removida com êxito.");
             }
+        }
+        if (opcao == 3){
+            cofrinho.listagemMoeda();
+        }
+        if (opcao == 4){
+            cofrinho.totalConvertido();
         }
      }
     }
